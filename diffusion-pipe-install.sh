@@ -35,6 +35,7 @@ pip install torchaudio==2.4.1+cu121 --index-url https://download.pytorch.org/whl
 
 # Setup models
 cd ~/diffusion-pipe
+pip install -r requirements.txt
 mkdir -p models/{hunyuan,clip,llm}
 wget https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_vae_bf16.safetensors
 git clone https://huggingface.co/openai/clip-vit-large-patch14 models/clip
