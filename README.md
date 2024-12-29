@@ -1,1 +1,17 @@
 https://civitai.com/articles/9798?highlight=728367&commentParentType=comment&commentParentId=727366&threadId=2096544#comments
+
+## Training
+Launch training with this command:
+
+NCCL_P2P_DISABLE="1" NCCL_IB_DISABLE="1" deepspeed --num_gpus=1 train.py --deepspeed --config config.toml
+## Monitoring Training
+- Monitoring GPU usage in a windows terminal:
+
+nvidia-smi --query-gpu=timestamp,name,temperature.gpu,utilization.gpu,memory.used,memory.total --format=csv -l 5
+- Training outputs will be saved in the directory specified by output_dir in your config
+
+## Resuming from checkpoint
+If your computer crashes/you have to turn it off. use the --resume_from_checkpoint flag. If your gpu is a bit slow, consider checkpointing more regularly (uses a lot of storage space). eg:
+
+NCCL_P2P_DISABLE="1" NCCL_IB_DISABLE="1" deepspeed --num_gpus=1 train.py --deepspeed --config config.toml --resume_from_checkpoint
+## Using the Tr
