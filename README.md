@@ -14,4 +14,21 @@ nvidia-smi --query-gpu=timestamp,name,temperature.gpu,utilization.gpu,memory.use
 If your computer crashes/you have to turn it off. use the --resume_from_checkpoint flag. If your gpu is a bit slow, consider checkpointing more regularly (uses a lot of storage space). eg:
 
 NCCL_P2P_DISABLE="1" NCCL_IB_DISABLE="1" deepspeed --num_gpus=1 train.py --deepspeed --config config.toml --resume_from_checkpoint
-## Using the Tr
+## Using the Trained LoRA
+### After training completes, find your LoRA file:
+- Navigate to training output directory in Windows:
+
+\\wsl$\Ubuntu\home\yourusername\training_output
+- Look for the latest epoch folder
+
+- Find the adapter.safetensors file
+### Using with ComfyUI:
+- Copy and rename the adapter.safetensors (to something descriptive) to your ComfyUI loras folder
+
+- Make sure you have the HunyuanVideoWrapper node installed https://github.com/kijai/ComfyUI-HunyuanVideoWrapper
+
+- Use the "HunyuanVideo Lora Select" node to load it
+
+- Experiment with different epochs to find the ideal number for your dataset
+
+
