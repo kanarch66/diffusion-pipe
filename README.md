@@ -30,5 +30,20 @@ NCCL_P2P_DISABLE="1" NCCL_IB_DISABLE="1" deepspeed --num_gpus=1 train.py --deeps
 - Use the "HunyuanVideo Lora Select" node to load it
 
 - Experiment with different epochs to find the ideal number for your dataset
+## Preparing Training Data
+1. Create dataset directory:
+mkdir -p ~/training_data/images
+2. Place training images in the directory:
+- LoRA: 20-50 diverse images
 
+- Optional: Create matching .txt files with prompts (same name as image file)
+
+
+Example structure:
+
+~/training_data/images
+├── image1.png
+├── image1.txt  # Optional prompt file
+├── image2.png
+├── image2.txt
 
