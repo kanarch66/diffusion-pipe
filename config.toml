@@ -38,7 +38,7 @@ timestep_sample_method = 'logit_normal'
 
 [adapter]
 type = 'lora'
-rank = 64
+rank = 32
 dtype = 'bfloat16'
 
 [optimizer]
