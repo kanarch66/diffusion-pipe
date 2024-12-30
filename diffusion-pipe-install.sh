@@ -35,10 +35,20 @@ pip install torchaudio==2.4.1+cu121 --index-url https://download.pytorch.org/whl
 
 # Setup models
 cd ~/diffusion-pipe
+
+# Install requirements
 pip install -r requirements.txt
+
+# Create necessary directories
 mkdir -p models/{hunyuan,clip,llm}
-wget https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_vae_bf16.safetensors
+# Download HunyuanVideo models into the hunyuan folder
+wget -P models/hunyuan https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors
+wget -P models/hunyuan https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_vae_bf16.safetensors
+
+# Clone CLIP model into the clip folder
 git clone https://huggingface.co/openai/clip-vit-large-patch14 models/clip
+
+# Clone LLaVA-LLama model into the llm folder
 git clone https://huggingface.co/Kijai/llava-llama-3-8b-text-encoder-tokenizer models/llm
 
 # Prepare training data directory
