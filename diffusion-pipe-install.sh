@@ -51,5 +51,7 @@ git clone --progress https://huggingface.co/openai/clip-vit-large-patch14 models
 # Clone LLaVA-LLama model into the llm folder
 git clone --progress https://huggingface.co/Kijai/llava-llama-3-8b-text-encoder-tokenizer models/llm
 
+pip install deepspeed
+pip install toml
 # Prepare training data directory
 mkdir -p ~/training_data/images
