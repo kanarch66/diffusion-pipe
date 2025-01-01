@@ -21,11 +21,11 @@ git clone --recurse-submodules https://github.com/tdrussell/diffusion-pipe
 cd diffusion-pipe
 
 # Setup Miniconda environment
-mkdir -p ~/miniconda3
+mkdir -p /workspace/miniconda3
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
-bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-rm ~/miniconda3/miniconda.sh
-source ~/miniconda3/bin/activate
+bash /workspace/miniconda3/miniconda.sh -b -u -p /workspace/miniconda3
+rm /workspace/miniconda3/miniconda.sh
+source /workspace/miniconda3/bin/activate
 conda init --all
 conda create -n diffusion-pipe python=3.12
 conda activate diffusion-pipe
