@@ -53,5 +53,6 @@ git clone --progress https://huggingface.co/Kijai/llava-llama-3-8b-text-encoder-
 
 pip install deepspeed
 pip install toml
+pip install tensorboard
 # Prepare training data directory
 mkdir -p ~/training_data/images
