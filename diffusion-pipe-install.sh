@@ -30,8 +30,8 @@ conda create -n diffusion-pipe python=3.12
 conda activate diffusion-pipe
 
 # Install required Python packages
-pip install torch==2.4.1 torchvision==0.19.1 --index-url https://download.pytorch.org/whl/cu121
-pip install torchaudio==2.4.1+cu121 --index-url https://download.pytorch.org/whl/cu121
+pip install torch==2.4.1 torchvision==0.19.1 --index-url https://download.pytorch.org/whl/cu121 --user
+pip install torchaudio==2.4.1+cu121 --index-url https://download.pytorch.org/whl/cu121 --user
 
 # Setup models
 cd ~/diffusion-pipe
