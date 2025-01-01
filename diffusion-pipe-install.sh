@@ -12,7 +12,8 @@ nvidia-smi
 
 # Download and install Miniconda
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh -b
+bash Miniconda3-latest-Linux-x86_64.sh -b -p /workspace/miniconda3
+
 source ~/.bashrc
 
 # Clone the diffusion-pipe repository
