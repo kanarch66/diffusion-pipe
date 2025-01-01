@@ -35,7 +35,7 @@ pip install torch==2.4.1 torchvision==0.19.1 --index-url https://download.pytorc
 pip install torchaudio==2.4.1+cu121 --index-url https://download.pytorch.org/whl/cu121 --user
 
 # Setup models
-cd ~/diffusion-pipe
+cd /home/user/diffusion-pipe/
 
 # Install requirements
 pip install -r requirements.txt
@@ -51,9 +51,5 @@ git clone --progress https://huggingface.co/openai/clip-vit-large-patch14 models
 # Clone LLaVA-LLama model into the llm folder
 git clone --progress https://huggingface.co/Kijai/llava-llama-3-8b-text-encoder-tokenizer models/llm
 
-pip install deepspeed
-pip install toml
-pip install tensorboard
-pip install multiprocess
 # Prepare training data directory
 mkdir -p ~/training_data/images
