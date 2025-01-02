@@ -33,13 +33,30 @@ cd diffusion-pipe
 
 # Setup Miniconda environment
 mkdir -p /home/user/miniconda3
-wget -p https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /home/user/miniconda3/miniconda.sh
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /home/user/miniconda3/miniconda.sh
 bash /home/user/miniconda3/miniconda.sh -b -u -p /home/user/miniconda3
 rm /home/user/miniconda3/miniconda.sh
+
+# Initialize Conda for all shells
 source /home/user/miniconda3/bin/activate
 conda init --all
+
+# Create the environment and activate it
 conda create -n diffusion-pipe python=3.12
 conda activate diffusion-pipe
+
+# Check if Conda is activated
+if [[ -n "$CONDA_DEFAULT_ENV" ]]; then
+    echo -e "\033[38;5;196m🌈 Conda environment activated! 🌈\033[0m" # Red
+    echo -e "\033[38;5;202m🌈 Conda environment activated! 🌈\033[0m" # Orange
+    echo -e "\033[38;5;226m🌈 Conda environment activated! 🌈\033[0m" # Yellow
+    echo -e "\033[38;5;46m🌈 Conda environment activated! 🌈\033[0m" # Green
+    echo -e "\033[38;5;51m🌈 Conda environment activated! 🌈\033[0m" # Blue
+    echo -e "\033[38;5;105m🌈 Conda environment activated! 🌈\033[0m" # Indigo
+    echo -e "\033[38;5;171m🌈 Conda environment activated! 🌈\033[0m" # Violet
+else
+    echo "Conda is not activated."
+fi
 
 # Install required Python packages
 pip install torch==2.4.1 torchvision==0.19.1 --index-url https://download.pytorch.org/whl/cu121 --user
