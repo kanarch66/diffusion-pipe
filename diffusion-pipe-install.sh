@@ -57,10 +57,10 @@ mkdir -p models/{hunyuan,clip,llm}
 wget -P models/hunyuan https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors
 wget -P models/hunyuan https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_vae_bf16.safetensors
 # Clone CLIP model into the clip folder
-git clone --progress https://huggingface.co/openai/clip-vit-large-patch14 models/clip
+git clone --progress --verbose https://huggingface.co/openai/clip-vit-large-patch14 models/clip
 
 # Clone LLaVA-LLama model into the llm folder
-git clone --progress https://huggingface.co/Kijai/llava-llama-3-8b-text-encoder-tokenizer models/llm
+git clone --progress --verbose https://huggingface.co/Kijai/llava-llama-3-8b-text-encoder-tokenizer models/llm
 
 # Prepare training data directory
 mkdir -p /home/user/diffusion-pipe/training_data/images
