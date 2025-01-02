@@ -76,6 +76,6 @@ cd /workspace/ComfyUI/models/clip/clip-vit-large-patch14
 for file in /home/user/diffusion-pipe/models/clip/*; do
     ln -s "$file" "$(pwd)/$(basename "$file")"
 done
-ln -s /home/user/diffusion-pipe/models/hunyuan/hunyuan_video_vae_bf16.safetensors /workspace/ComfyUI/models/vae
-ln -s /home/user/diffusion-pipe/models/hunyuan/hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors /workspace/ComfyUI/models/diffusion_models/Hunyuan
+ln -s /home/user/diffusion-pipe/models/hunyuan/hunyuan_video_vae_bf16.safetensors /workspace/ComfyUI/models/vae/
+ln -s /home/user/diffusion-pipe/models/hunyuan/hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors /workspace/ComfyUI/models/diffusion_models/Hunyuan/
 
