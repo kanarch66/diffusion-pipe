@@ -13,6 +13,6 @@ frame_buckets = [1]
 
 [[directory]]
 # Set this to where your dataset is
-path = 'workspace/home/user/diffusion-pipe/training_data/images'
+path = '/workspace/home/user/diffusion-pipe/training_data/images'
 # Reduce as necessary
 num_repeats = 5
