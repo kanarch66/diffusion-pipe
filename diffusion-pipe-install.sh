@@ -52,4 +52,19 @@ git clone --progress https://huggingface.co/openai/clip-vit-large-patch14 models
 git clone --progress https://huggingface.co/Kijai/llava-llama-3-8b-text-encoder-tokenizer models/llm
 
 # Prepare training data directory
-mkdir -p ~/training_data/images
+mkdir -p /home/user/diffusion-pipe/training_data/images
+
+#Symlink to ComfyUI
+mkdir -p /workspace/ComfyUI/models/LLM/llava-llama-3-8b-text-encoder-tokenizer
+cd /workspace/ComfyUI/models/LLM/llava-llama-3-8b-text-encoder-tokenizer
+for file in /home/user/diffusion-pipe/models/llm/*; do
+    ln -s "$file" "$(pwd)/$(basename "$file")"
+done
+mkdir -p /workspace/ComfyUI/models/clip/clip-vit-large-patch14
+cd /workspace/ComfyUI/models/clip/clip-vit-large-patch14
+for file in /home/user/diffusion-pipe/models/clip/*; do
+    ln -s "$file" "$(pwd)/$(basename "$file")"
+done
+ln -s /home/user/diffusion-pipe/models/hunyuan/hunyuan_video_vae_bf16.safetensors /workspace/ComfyUI/models/vae
+ln -s /home/user/diffusion-pipe/models/hunyuan/hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors /workspace/ComfyUI/models/diffusion_models/Hunyuan
+
