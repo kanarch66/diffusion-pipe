@@ -71,6 +71,11 @@ pip install -r requirements.txt
 # Create necessary directories
 mkdir -p models/{hunyuan,clip,llm}
 # Download HunyuanVideo models into the hunyuan folder
+# Setup warning message in shades of orange for downloading gigantic files
+echo -e "\033[38;5;214mWARNING: You are about to download large files! Please ensure your terminal stays open.\033[0m"
+echo -e "\033[38;5;214mWARNING: This may take some time depending on your internet speed.\033[0m"
+echo -e "\033[38;5;214mDo not close the terminal while downloading!\033[0m"
+
 wget -P models/hunyuan https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors
 wget -P models/hunyuan https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_vae_bf16.safetensors
 # Clone CLIP model into the clip folder
