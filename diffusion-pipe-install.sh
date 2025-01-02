@@ -22,7 +22,7 @@ cd diffusion-pipe
 
 # Setup Miniconda environment
 mkdir -p /home/user/miniconda3
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O home/user/miniconda3/miniconda.sh
+wget -p https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /home/user/miniconda3/miniconda.sh
 bash /home/user/miniconda3/miniconda.sh -b -u -p /home/user/miniconda3
 rm /home/user/miniconda3/miniconda.sh
 source /home/user/miniconda3/bin/activate
