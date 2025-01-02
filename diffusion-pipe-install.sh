@@ -80,5 +80,7 @@ ln -s /home/user/diffusion-pipe/models/hunyuan/hunyuan_video_vae_bf16.safetensor
 mkdir -p /workspace/ComfyUI/models/diffusion_models/Hunyuan
 ln -s /home/user/diffusion-pipe/models/hunyuan/hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors /workspace/ComfyUI/models/diffusion_models/Hunyuan
 
+#Download upscaler
+wget -p https://huggingface.co/FacehugmanIII/4x_foolhardy_Remacri/resolve/main/4x_foolhardy_Remacri.pth /workspace/ComfyUI/models/upscale_models
 #If conda is not created, follow this link https://docs.anaconda.com/miniconda/install/#quick-command-line-install
 
