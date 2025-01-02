@@ -11,10 +11,21 @@ sudo apt-get install -y git-lfs wget python3-dev build-essential
 nvidia-smi
 
 # Download and install Miniconda
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh -b -p /home/user/miniconda3
+wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
 
+# Install Miniconda silently
+bash ~/miniconda.sh -b -p ~/miniconda3
+
+# Ensure Miniconda is added to PATH
+echo 'export PATH="$HOME/miniconda3/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
+
+# Clean up the installation script
+rm ~/miniconda.sh
+
+# Verify installation
+conda --version
+
 
 # Clone the diffusion-pipe repository
 git clone --recurse-submodules https://github.com/tdrussell/diffusion-pipe
